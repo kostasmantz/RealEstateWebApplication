@@ -12,6 +12,8 @@ class Listing extends Model
 		'name',
 		'description',
 		'photo',
+		'price',
+		'city',
 		'type',
 		'user_id',
 	];

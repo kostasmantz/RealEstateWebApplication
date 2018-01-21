@@ -19,6 +19,7 @@ class CreateListingsTable extends Migration
 			$table->longText('description');
             $table->string('photo');
             $table->double('price');
+            $table->string('city'); 
 			$table->enum('type', ['sale', 'rent']);
 			$table->integer('user_id')->unsigned();
     		$table->foreign('user_id')->references('id')->on('users');

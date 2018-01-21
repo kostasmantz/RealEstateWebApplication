@@ -26,7 +26,8 @@
 			@foreach($newListings as $listing)
             <div class="col-lg-4 col-md-6 mb-4">
           		<div class="card">
-            		<div style="width:300; height:200px; background:url('{{$listing->photo}}');" ><img class="card-img-top" alt=""></div>
+            		<div style="width:300; height:200px; background:url('img/{{$listing->photo}}');" >
+                <img class="card-img-top" alt=""></div>
             		<div class="card-body">
               			<h4 class="card-title">{{$listing->name}}</h4>
               			<p class="card-text">{{ $listing->price }} €</p>

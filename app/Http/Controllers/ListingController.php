@@ -39,7 +39,21 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $listing = new Listing;
+        if(Auth::check()){
+            $listing -> name = $request->input('name'); 
+            $listing -> description = $request->input('description'); 
+            $listingImage = $request->file('photo');
+            $listingImage->move('img',$listingImage->getClientOriginalName());
+            $listing -> photo = $listingImage->getClientOriginalName();
+            $listing -> price = $request->input('price'); 
+            $listing -> city = $request->input('city'); 
+            $listing -> type = $request->input('listingType');
+            $listing -> user_id = Auth::user()->getId();
+            $listing -> save();
+        }
+        return redirect('myproperties');
     }
 
     /**
@@ -109,7 +123,7 @@ class ListingController extends Controller
 	{
 		$id = Auth::user()->getId();
 		$listings = DB::table('listings')->select(DB::raw('*'))->where('user_id','=',$id)->get();
-		return view('myproperties',['myListings' => $listings]);
+		return view('properties.myproperties',['myListings' => $listings]);
 	}
 
 	public function insert(Request $request){
