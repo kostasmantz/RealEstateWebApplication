@@ -8,7 +8,7 @@
         		<h1 class="display-4">Welcome to HomeScopic Real Estate</h1>
         		<p class="lead">In HomeScopic you can search for the appartment of your dreams!<br>
 			You can find listings for rent,for sale so you can help your dream come true.</p>
-        		<a href="#" class="btn btn-primary btn-lg">Get Started!</a>
+        		<a href="{{ route('register') }}" class="btn btn-primary btn-lg">Get Started!</a>
       		</header>
 
       		<!-- Page Features -->

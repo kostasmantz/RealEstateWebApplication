@@ -40,6 +40,9 @@ Route::get('/addproperty', function () {
 });
 Route::post('addProperty','ListingController@store')->name('addProperty');
 
+//Property details
+Route::get('details','ListingController@details')->name('details');
+
 Auth::routes();
 
 Route::get('/findResults','ListingController@requestListings')->name('searchListings');

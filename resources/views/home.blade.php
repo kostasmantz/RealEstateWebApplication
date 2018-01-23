@@ -9,7 +9,7 @@
 
         <div class="col-lg-3">
 
-          <h1 class="my-4">Welcome User</h1>
+          <h1 class="my-4">Welcome {{Auth::user()->name}}</h1>
           <div class="list-group">
             <a href="/profile" class="list-group-item"><i class="fa fa-profile"></i> Profile</a>
             <a href="/myproperties" class="list-group-item"><i class="fa fa-eye"></i> View My Properties</a>
@@ -33,7 +33,7 @@
               			<p class="card-text">{{ $listing->price }} €</p>
             		</div>
             		<div class="card-footer">
-              			<a href="#" class="btn btn-primary">Find Out More!</a>
+              			<a href="{{ route('details',['listingId' => $listing->listingId]) }}" class="btn btn-primary">Find Out More!</a>
             		</div>
           		</div>
             </div>

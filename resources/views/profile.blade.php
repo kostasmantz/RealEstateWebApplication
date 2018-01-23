@@ -20,7 +20,7 @@
                             <div class="row">
                                 <div class="centered-text col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
                                     <div itemscope="" itemtype="http://schema.org/Person">
-                                        <h2> <span itemprop="name">Your Name</span></h2>
+                                        <h2> <span itemprop="name">{{Auth::user()->name}}</span></h2>
                                         <p itemprop="jobTitle">Your Position</p>
                                         <p><span itemprop="affiliation">Your Company</span></p>
                                         <p>

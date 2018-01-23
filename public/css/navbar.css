@@ -29,6 +29,11 @@ body {
 .content-margin-extended{
 	margin-top:150px;
 }
+
+.content-center{
+	margin-left:40%;
+}
+
 .find.content{
 	margin-top:80px;
 	margin-left:100px;

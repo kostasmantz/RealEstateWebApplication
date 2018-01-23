@@ -126,16 +126,17 @@ class ListingController extends Controller
 		return view('properties.myproperties',['myListings' => $listings]);
 	}
 
-	public function insert(Request $request){
-		$name = $request->input('name');
-		
-		DB::table('listings')->insert([
-			['name'=> 'kakakakka'],
-			['description'=>'dsadsdsadsa'],
-			['photo'=>'img/property_1.jpg'],
-			['price'=>'300'],
-			['city'=>'Serres'],
-			
-		]);
-	}
+    public function details(Request $request){
+        $listing_to_return = new Listing;
+
+        $id = $request->input('listingId');
+        $listing = Listing::where('listingId',$id)->get();
+        $listing_to_return->name =  $listing[0]['name'];
+        $listing_to_return->description = $listing[0]['description'];
+        $listing_to_return->price =  $listing[0]['price'];
+        $listing_to_return->city =  $listing[0]['city'];
+        $listing_to_return->type =  $listing[0]['type'];
+        $listing_to_return->photo = $listing[0]['photo'];
+        return view('properties.details',['listing' => $listing_to_return]);
+    }
 }
